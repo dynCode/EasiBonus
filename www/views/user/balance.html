@@ -1,0 +1,57 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Balance</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <ons-row align="center">
+        <ons-col width="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col width="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>BALANCE</span></h2>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">CURRENT BALANCE:</div><div class="formListRight" style="width: 40%;">{{currentUnits}}</div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">RAND EQUIVALENT:</div><div class="formListRight" style="width: 40%;">R {{currentRands}}</div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">USED POINTS:</div><div class="formListRight" style="width: 40%;">{{totalUsed}}</div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">DISCOUNT TOTAL:</div><div class="formListRight" style="width: 40%;">R {{totalDiscount}}</div>
+        </div>
+        <!--<div class="formList">
+            <div class="formListLable">TOKEN BALANCE:</div><div class="formListRight" style="width: 40%;">{{tokenBalance}}</div>
+        </div>-->
+        <div class="formList">
+            <div class="formListLable">TIER LEVEL:</div><div class="formListRight" style="width: 40%;">{{tierDes}}</div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">COMMUNITY:</div><div class="formListRight" style="width: 40%;">{{commun}}</div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CARD NO:</div><div class="formListRight" style="width: 60%;">{{CardNumber}}</div>
+        </div>
+    </div>
+    <ons-list>
+        <ons-list-item modifier="chevron" ng-click="myTransactions()">
+            MY LAST 10 TRANSACTIONS
+        </ons-list-item>
+    </ons-list>
+    <ons-bottom-toolbar ng-style="{'background-color':footerBG}">
+        <ons-row vertical-align="center" style="height: 44px">
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 25px;" onclick="myNavigator.pushPage('views/home.html', { animation : 'slide' } )"><ons-icon icon="ion-home"></ons-icon></ons-col>
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 25px;" onclick="myNavigator.pushPage('views/socialmedia.html', { animation : 'slide' } )"><ons-icon icon="ion-heart"></ons-icon></ons-col>
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 15px;" ng-click="loadpage(5)">T&C’s</ons-col>
+        </ons-row>
+    </ons-bottom-toolbar>
+</ons-page>

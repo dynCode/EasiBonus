@@ -1,0 +1,54 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-card>
+        <div class="content">
+            <ons-row style="border: 1px solid #333; padding: 10px;">
+                <ons-col width="50px">
+                    <img src="images/AgentProfileIconGrey.svg" alt="user" />
+                </ons-col>
+                <ons-col style="padding-left: 10px">
+                    {{FirstName}} {{LastName}}
+                    <br>
+                    {{totalFramers}} farmers linked
+                </ons-col>
+            </ons-row>
+            <br>
+            <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">About us</div>
+            <img src="images/easiSeedLogo.jpg" alt="EasiSeeds Logo">
+            <p> 
+                <strong>Easi Seed</strong><br>
+                Founded in 2019, European African Seed Initiative (Pty) Ltd is a specialist seed supplier. We specialize in collaborating and growing partnerships between ourselves, global leader breeding programs, and sourcing the best available seed varieties from international suppliers. With our headquarters in South-Africa, we are rapidly becoming one of the leading seed suppliers in Africa.
+            </p>
+            <p>At EASI SEEDS, we pride ourselves in offering and delivering superior services, technical assistance and after-sales support up till the last mile. We provide this to our corporate customers and our farmers from the moment they start enquiring about seed, purchase their seed until they deliver the fresh produce to the market. To keep to our commitment, we use a vast network of trusted industry experts, dedicated sales representatives and the latest technologies available to get in contact with the whole value chain. An ever-increasing demand for our services and seed has led to more and more EASI SEEDS subsidiaries over the African continent.</p>
+            <p>Our passion and commitment to quality are ensured by only making use of ISTA accredited labs. Therefore, we commit to supplying seed with the highest adherence to International Quality Standards, offering our valuable farmers and corporate client’s peace of mind.</p>
+            <br>
+            <img src="images/agriBonusLogo.jpg" alt="AgriBonus Logo">
+            <p> 
+                <strong>Agribonus</strong><br>
+                Established in 1998 and based in Pretoria, Agribonus was the first loyalty program in South Africa exclusively designed for the agricultural sector. The program awards points to farmers who purchase products from companies participating as Agribonus partners. The partners provide a wide range of agriculture-related products and include companies such as Toyota, De Heus, Zoetis and Seednet. Today, the Agribonus loyalty program boasts 80 000 active members and 23 partners.
+            </p>
+            <p>Due to the company’s vast experience in the management of a successful loyalty program, it can also oversee the development and supervision of a database with specific focus on the agricultural sector. Agribonus is also equipped to extract valuable information from databases for research and market improvement methods. </p>
+            <br>
+            <ons-row>
+                <ons-col style="margin: auto;" width="50%">
+                    <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                        Home
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+        </div>
+    </ons-card>
+    <ons-bottom-toolbar style="background-color: #fff; height: auto;">
+        <img src="images/FooterImg.svg" alt="logo" style="width: 100%;" />
+    </ons-bottom-toolbar>
+</ons-page>

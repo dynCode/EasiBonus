@@ -1,0 +1,65 @@
+<ons-page class="bgImgOver">
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Enquiry Now</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-card>
+        <div class="title">
+            Enquire Now
+        </div>
+        <div class="content">
+            <div class="formShadow">
+                <div>
+                    <div class="formListLable">FIRST NAME:</div><div class="formListInput"><input ng-model="data.contactName" type="text" class="text-input" placeholder="Name" /></div>
+                </div>
+                <div>
+                    <div class="formListLable">LAST NAME:</div><div class="formListInput"><input ng-model="data.contactSurname" type="text" class="text-input" placeholder="Surname" /></div>
+                </div>
+                <div>
+                    <div class="formListLable">CELL:</div><div class="formListInput"><input ng-model="data.contactCell" type="text" class="text-input" placeholder="Cell number" /></div>
+                </div>
+                <div>
+                    <div class="formListLable">EMAIL:</div><div class="formListInput"><input ng-model="data.contactEmail" type="text" class="text-input" placeholder="Email address" /></div>
+                </div>
+            </div>
+            <div style="padding: 0px 20px 20px 10px;">
+                <strong>Enquiry Type:</strong>
+                <br><br>
+                <label class="left">
+                    <ons-radio name="contact_type" input-id="contact_type-covid" ng-model="data.contactType" value="covid"></ons-radio>
+                </label>		
+                <label for="contact_type-covid" class="center">		
+                    Retrieve COVID-19 Record
+                </label>	
+                <br><br>
+                <label class="left">
+                    <ons-radio name="contact_type" input-id="contact_type-technical" ng-model="data.contactType" value="technical"></ons-checkbox>
+                </label>
+                <label for="contact_type-technical" class="center">		
+                    Technical Problem
+                </label>
+                <br><br>
+                <label class="left">
+                    <ons-radio name="contact_type" input-id="contact_type-general" ng-model="data.contactType" value="general"></ons-checkbox>
+                </label>
+                <label for="contact_type-general" class="center">		
+                    General Enquiry
+                </label>
+                <br><br>
+                <strong>Comments:</strong>
+                <div class="form-row formListInputLrg">
+                    <textarea ng-model="data.contact_comment" placeholder="Comments"></textarea>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <ons-button modifier="large" id="btnLogIn" ng-click="contactMe()" style="width:100%">SUBMIT</ons-button>
+        </div>
+    </ons-card>
+</ons-page>

@@ -1,0 +1,53 @@
+<ons-page>
+    <style>
+        div#map-container {width: 100%; height: 100%; max-height: 500px; position: relative;}
+        div#map-container div.custom-control { z-index: 1; direction: ltr; overflow: hidden; text-align: center; padding: 1px 6px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; -webkit-background-clip: padding-box; border-width: 1px 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-top-color: rgba(0, 0, 0, 0.14902); border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 41px; background-color: rgb(255, 255, 255); background-clip: padding-box; }
+        div#map-container.full-screen {position:absolute; display:block; width:100%; height:100%; top: 0; left: 0}
+        div#map-container div[full-screen-toggle] { cursor: pointer; position: absolute; top: 5px; right: 100px; }
+        div#map-container div[store-info] { position: absolute; display: none; top: 5px; right: 5px; bottom: 5px; width: 40%  }
+        div#map-container div[store-info] a.hide-link { float:right  }
+        div#map-container div[store-info] table { width: 100% }
+        div#map-container div[store-info] table td { text-align: left; padding: 5px; border: 1px solid #ccc  }
+        map {display:block; width:100%; height:100%; max-height: 500px;}
+    </style>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <div class="subImgBlock">
+                    <img src="images/RegisterIconGrey.svg" alt="logo" style="width: 25%;" />
+                </div>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Drop Pin</div>
+                <br>
+                <div id="map-container" ng-controller="mapController">
+                    <map ng-if="render" center="[{{geopos.lat}}, {{geopos.lng}}]" zoom-control="true" zoom="5"  on-click="click()"> </map>
+                    <div>{{validation_text}}</div>
+                </div>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.popPage({ animation : 'slide' })">
+                            Back
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="data.fcoords = geopos.lat+','+geopos.lng" onclick="myNavigator.popPage( { animation : 'slide' } )">
+                            Confirm Pin
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

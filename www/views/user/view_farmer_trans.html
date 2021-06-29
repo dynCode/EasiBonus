@@ -1,0 +1,60 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <ons-row style="border: 1px solid #333; padding: 10px;">
+                    <ons-col width="50px">
+                        <img src="images/MyFarmersIconGrey.svg" alt="user" />
+                    </ons-col>
+                    <ons-col style="padding-left: 10px">
+                        {{farmerInfo.FirstName}} {{farmerInfo.LastName}}
+                        <br>
+                        - {{farmerInfo.memNum}}
+                    </ons-col>
+                </ons-row>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Transaction Info</div>
+                <br>
+                <strong>Product Barcode:</strong><br>{{data.barcode}}<br>
+                <strong>Product Category:</strong><br>{{data.pcat.lable}}<br>
+                <strong>Product Description:</strong><br>{{data.prod.productName}}<br>
+                <strong>Date of Purchase:</strong><br>{{data.dop}}<br>
+                <strong>Delivery note number:</strong><br>{{data.dnn}}<br>
+                <strong>Quantity (Items/Bags/Units):</strong><br>{{data.qty}}<br>
+                <strong>Total Value:</strong><br>{{data.tval | number:2}}<br>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn"  onclick="myNavigator.pushPage('views/user/reorder_farmer_trans.html', { animation : 'lift' } )">
+                            RE-ORDER
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="reversOrder()" ng-if="data.rev">
+                            Reverse
+                        </ons-button>
+                        <ons-button modifier="outline" id="btnLogIn" ng-if="!data.rev" disabled>
+                            Reverse
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <p>
+                    <ons-button modifier="outline" id="btnLogIn" ng-click="viewFarmer(farmerInfo.memNum);">
+                        Back To Farmer's Info
+                    </ons-button>
+                </p>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

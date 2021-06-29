@@ -1,0 +1,48 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left"></div>
+        <div class="center">HOME</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div class="topBanner">
+        <div class="imgBlock hideableW" style="display: block;"><img src="{{Banner1}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableW" style="display: none;"><img src="{{Banner2}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableW" style="display: none;"><img src="{{Banner3}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableW" style="display: none;"><img src="{{Banner4}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableW" style="display: none;"><img src="{{Banner5}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableW" style="display: none;"><img src="{{Banner6}}" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <ons-row align="center">
+        <ons-col width="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col width="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>HOME</span></h2>
+    <ons-row align="center">
+        <ons-col width="50%"><ons-button modifier="light large" onclick="myNavigator.pushPage('views/login.html', { animation : 'slide' } )" ng-disabled="loggedIn"><img src="images/icons/LOGIN.png" style="width: 75px;" /><br>LOGIN / SIGN UP</ons-button></ons-col>
+        <ons-col width="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/profile.html', { animation : 'slide' } )" ng-disabled="guest"><img src="images/icons/PROFILE.png" style="width: 75px;" /><br>PROFILE</ons-button></ons-col>
+    </ons-row>
+    <ons-row align="center">
+        <ons-col width="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/shop.html', { animation : 'slide' } )"><img src="images/icons/SHOP.png" style="width: 75px;" /><br>SHOP</ons-button></ons-col>
+        <ons-col width="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/redemptions.html', { animation : 'slide' } )"  ng-disabled="guest"><img src="images/icons/EWALLET.png" style="width: 75px;" /><br>E-WALLET</ons-button></ons-col>
+    </ons-row>
+    <ons-row align="center">
+        <ons-col width="50%"><ons-button modifier="large light" ng-click="loadpage(3)"><img src="images/icons/ABOUT-US.png" style="width: 75px;" /><br>ABOUT US</ons-button></ons-col>
+        <ons-col width="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/promotions.html', { animation : 'slide' } )"><img src="images/icons/PROMOTIONS.png" style="width: 75px;" /><br>PROMOTIONS</ons-button></ons-col>
+    </ons-row>
+    <ons-row align="center">
+        <ons-col width="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/socialmedia.html', { animation : 'slide' } )"><img src="images/icons/SOCIAL-MEDIA.png" style="width: 75px;" /><br>SOCIAL MEDIA</ons-button></ons-col>
+        <ons-col width="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/support.html', { animation : 'slide' } )"><img src="images/icons/SUPPORT.png" style="width: 75px;" /><br>SUPPORT</ons-button></ons-col>
+    </ons-row>
+    <ons-bottom-toolbar ng-style="{'background-color':footerBG}">
+        <ons-row vertical-align="center" style="height: 44px">
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 25px;" onclick="myNavigator.pushPage('views/home.html', { animation : 'slide' } )"><ons-icon icon="ion-home"></ons-icon></ons-col>
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 25px;" onclick="myNavigator.pushPage('views/socialmedia.html', { animation : 'slide' } )"><ons-icon icon="ion-heart"></ons-icon></ons-col>
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 15px;" ng-click="loadpage(5)">T&C’s</ons-col>
+        </ons-row>
+    </ons-bottom-toolbar>
+</ons-page>

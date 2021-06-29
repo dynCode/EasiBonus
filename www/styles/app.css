@@ -1,0 +1,777 @@
+@font-face {
+    font-family: 'GothBlackReg';
+    src: URL('../res/fonts/Gotham Black Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GothConBold';
+    src: URL('../res/fonts/Gotham Condensed Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GothCon';
+    src: URL('../res/fonts/Gotham Condensed Book.otf') format('opentype');
+}
+
+body, .page, .card, .text-input, .button {
+    font-family: 'GothCon',"Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+}
+
+a {
+    color: rgb(154,202,60);
+    font-weight: bold;
+}
+
+hr {
+    border: 1px solid #eee;
+}
+
+/* page back ground */
+.page__background {
+    background-color: #fff;
+}
+
+.loadingpage .page__background {
+    background-color: #9aca3c;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+.page-with-bottom-toolbar>.page__content {
+    bottom: 77px;
+}
+
+/* top banner */
+.topBanner, .toolbar__title {
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+}
+
+.imgBlock {
+    text-align: center;
+    position: relative;
+    z-index: -1;
+    margin-bottom: -5px;
+}
+
+.subImgBlock {
+    text-align: center;
+}
+
+/*list items*/
+.list-item {
+    font-family: 'GothCon',"Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    border: 1px solid #333;
+}
+
+.list-item:last-child {
+    margin-bottom: 0px;
+}
+
+.list__item {
+    text-align: center;
+}
+.list__item--chevron {
+    /*box-shadow: 0px -5px 10px -1px rgba(187,187,187,1);*/
+    text-align: center;
+    font-weight: bold;
+    color: #96989a;
+}
+
+.search .list__item--chevron {
+    text-align: left;
+    font-weight: normal;
+    line-height: 25px;
+    padding: 5px 20px;
+}
+
+.search .list__item--chevron:before {
+    color: #ce282c;
+}
+
+.retail .list__item--chevron {
+    text-align: left;
+    padding: 5px 20px;
+    color: #606062;
+}
+
+.retail .list__item--chevron:before {
+    color: #ce282c;
+}
+
+.stamps {
+    width: 100%;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stamps div{
+    width: 33%;
+}
+
+/*partner list*/
+.list__item--partnerList {
+    box-shadow: none;
+    text-align: left;
+}
+
+.list > .list-item-container {
+    line-height: 1;
+    padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+    width: 80px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #eee;
+}
+
+.name {
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 14px;
+    opacity: 0.4;
+    margin-bottom: 5px;
+}
+
+.desc {
+    line-height: 1.2;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.myHeader {
+    font-family: 'GothConBold';
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(51,51,51);
+    text-align: center;
+}
+
+.myHeader span {
+    /*border-bottom: 1px solid #C82126;*/
+}
+
+.listHeadings {
+    margin: 0;
+    font-weight: normal;
+    text-align: left;
+    padding: 15px;
+}
+
+/*form style*/
+.formShadow {
+    /*box-shadow: 0px 0px 10px 5px rgb(187, 187, 187);*/
+}
+
+.formList {
+    display: block; 
+    /*box-shadow: 0px -5px 10px -1px rgba(187,187,187,1); */
+    padding: 10px 20px;
+}
+
+.formList strong {
+    color: rgb(154,202,60);
+}
+
+.formShadow small {
+    font-size: 10px;
+    padding-left: 20px;
+    margin-top: -10px;
+    display: block;
+}
+
+.formShadow small.red {
+    color: rgb(154,202,60);
+}
+
+.formListLrg {
+    display: block;
+    /* box-shadow: 0px -5px 10px -1px rgba(187,187,187,1); */
+    padding: 10px 20px;
+}
+
+.formListInputLrg {
+    float: none;
+    line-height: 40px;
+    width: 100%;
+}
+
+.formListLable {
+    float: left; 
+    line-height: 40px;
+    font-size: 14px;
+    width: 40%;
+}
+
+.formListRight {
+    float:right; 
+    line-height: 40px; 
+}
+
+.formListInput {
+    float:right; 
+    line-height: 40px; 
+    width: 60%;
+}
+
+.formListInput > input[type=text],
+.formListInput > input[type=password],
+.formListInput > input[type=number],
+.formListInput > select {
+    border-radius: 0px;
+    background: #d6d6d6;
+    border-color: #d6d6d6;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    width:100%; 
+    vertical-align: middle
+}
+
+.formListInputLrg > textarea {
+    border-radius: 0px;
+    background: #d6d6d6;
+    border-color: #d6d6d6;
+    padding: 0 5px;
+    line-height: 40px;
+    width:100%; 
+    vertical-align: middle;
+    height: 120px;
+    font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+    color: #1f1f21;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.formListInputLrg > input[type=text],
+.formListInputLrg > input[type=password],
+.formListInputLrg > input[type=number],
+.formListInputLrg > select,
+.formListInputLrg > input[type=date],
+.formListInputLrg > input[type=time] {
+    border-radius: 0px;
+    background: #fff;
+    border: 1px solid #9aca3c;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    width:100%; 
+    vertical-align: middle;
+    color: #9aca3c;
+}
+
+.formListInputLogin > input[type=text], 
+.formListInputLogin > input[type=password], 
+.formListInputLogin > input[type=number], 
+.formListInputLogin > select, 
+.formListInputLogin > input[type=search], 
+.formListInputLogin > input[type=date], 
+.formListInputLogin > input[type=time] {
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid #9aca3c;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin: 0 0 0 20px;
+    width: 95%;
+    vertical-align: middle;
+}
+
+.search-input {
+    font-family: 'GothCon',"Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    background-color: #fff;
+    border: 1px solid #9aca3c;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+
+input[type=color] {
+    width: 100%;
+    height: 35px;
+    border: 0;
+}
+
+.color-label {
+    line-height: 35px;
+}
+
+/*side menu*/
+.page--menu-page__content {
+    background-color: #bbb;
+}
+
+/*tab bar alignment*/
+.tab-bar__item {}
+
+.tab-bar__button--tabbar-right {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.tab-bar__button--tabbar-left{
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* slide show*/
+.hideable {
+    display: none;
+}
+
+.button-bar__button {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    background-color: rgba(154,202,60,1);
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+}
+
+.button-bar__item.active > .button-bar__button, :checked + .button-bar__button {
+    background-color: rgba(154,202,60,0.80);
+    color: #000;
+}
+
+.navigation-bar {
+    background: rgba(154,202,60,1);
+}
+
+.navigation-bar__title {
+    color: #333;
+}
+
+.toolbar-button, .toolbar-button--outline, .toolbar-button--quiet {
+    color: #333;
+}
+
+.tab-bar {
+    background-color: #c69a48;
+}
+
+.tab-bar__button {
+    color: rgba(154,202,60,1);
+}
+.tab-bar__button > .tab-bar__icon .ons-icon {
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 34px;
+}
+
+.tab-bar__button > .tab-bar__label {
+    
+}
+
+:checked + .tab-bar__button > .tab-bar__icon {
+    color: rgba(154,202,60,1);
+}
+
+:checked + .tab-bar__button {
+    color: rgba(154,202,60,1);
+}
+
+.button {
+    background: rgba(154,202,60,1);
+    color: #fff;
+    font-weight: bold;
+}
+
+.cardBut {
+    background: #513971;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-left: -5px;
+}
+
+.shopBut {
+    background: #ffd719;
+    color: #000;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: -5px;
+}
+
+.buttonDanger {
+    background: rgb(154,202,60);
+    color: #fff;
+    font-weight: bold;
+}
+
+.button-bar__button {
+    border: none;
+}
+
+.button--outline {
+    background-color: #fff;
+    border: 1px solid rgb(154,202,60);
+    width: 100%;
+    text-align: center;
+    color: rgb(154,202,60);
+    white-space: normal;
+    border-radius: 10px;
+    line-height: 22px;
+    font-size: 18px;
+    padding: 10px;
+    box-shadow: 1px 0px 7px #ccc;
+    text-transform: uppercase;
+}
+
+.button--outline img {
+    width: 75%;
+}
+
+.button--outlinered {
+    background-color: transparent;
+    border: 1px solid rgba(154,202,60,1);
+    color: rgba(154,202,60,1);
+    width: 100%;
+    text-align: center;
+}
+
+.checkbox > input[type="checkbox"]:checked {
+    /*background: rgba(154,202,60,0.81);*/
+}
+
+.checkbox > .checkbox__checkmark:before {
+    border: 1px solid rgba(154,202,60,0.81);
+    border-radius: 0;
+}
+
+.checkbox > input[type="checkbox"]:checked + .checkbox__checkmark:before {
+    background: rgba(154,202,60,0.81);
+    border: 1px solid rgba(154,202,60,0.81);
+}
+
+.radio-button > input[type="radio"]:checked {
+    /*background: rgba(154,202,60,0.81);*/
+}
+
+.radio-button > .radio-button__checkmark:before {
+    border: 1px solid rgba(154,202,60,0.81);
+    border-radius: 0px;
+}
+
+.radio-button > input[type="radio"]:checked + .radio-button__checkmark:before {
+    background: rgba(154,202,60,0.81);
+    border: 1px solid rgba(154,202,60,0.81);
+}
+
+.radio-button__checkmark:after {
+    border: 3px solid rgba(255,255,255,0.81);
+    border-width: 2px;
+    border-top: none;
+    border-right: none;
+    -webkit-border-radius: 0px;
+}
+
+.button-bar__item:first-child > .button-bar__button {
+    border-left: 1px solid rgba(255,255,255,0.77);
+    border-right: 1px solid rgba(255,255,255,0.77);
+}
+
+.button--large--cta {
+    background-color: #6c6c6c;
+}
+
+.button--large--quiet {
+    color: rgba(154,202,60,1);
+}
+
+.centerContent {
+    text-align: center;
+}
+
+.row-center {
+    text-align: center;
+}
+
+.button--light {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 0px;
+    border: 0px;
+    margin: 5px 0 0 0;
+    line-height: 18px;
+    font-size: 14px;
+    color: rgb(0,0,0);
+}
+
+.button--light:active {
+    background-color: rgba(154,202,60,0.9);
+    opacity: 1;
+    transition: none;
+}
+
+.button--quiet {
+    background: transparent;
+    color: rgba(154,202,60,1);
+}
+
+ons-carousel[fullscreen] {
+    z-index: 2000;
+    background: #fff;
+}
+
+.back-button__icon {
+    fill: #fff;
+}
+
+.back-button {
+    color: #fff;
+}
+
+.button--outline:active, .button--outline:hover {
+    background-color: #cce29d;
+    border: 1px solid rgb(154,202,60);
+    color: #5a5c5d;
+    opacity: 1;
+}
+
+.button--outline:active img, .button--outline:hover img {filter: grayscale(100%) sepia(25%);}
+
+.shareBut {
+    background: rgb(154,202,60);
+    color: #000;
+    line-height: 30px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 85%;
+    display: block;
+}
+
+.fab {
+    background: #F89C32;
+    color: #333;
+}
+
+.fab__icon {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.spinImage {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 80px;
+    margin: auto;
+    box-shadow: 0 0 0 0 rgba(154,202,60, 1);
+    transform: scale(1);
+    -webkit-animation:pulse 2s infinite;
+    -moz-animation:pulse 2s infinite;
+    animation:pulse 2s infinite;
+}
+
+.spinImageSml {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 50px;
+    margin: auto;
+    box-shadow: 0 0 0 0 rgba(154,202,60, 1);
+    transform: scale(1);
+    -webkit-animation:pulse 2s infinite;
+    -moz-animation:pulse 2s infinite;
+    animation:pulse 2s infinite;
+}
+@-moz-keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(154,202,60, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(154,202,60, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(154,202,60, 0);
+    }
+}
+@-webkit-keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(154,202,60, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(154,202,60, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(154,202,60, 0);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(154,202,60, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(154,202,60, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(154,202,60, 0);
+    }
+}
+
+.action-sheet {
+    font-family: 'GothBlackReg',"Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    cursor: default;
+    position: absolute;
+    left: 150px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 2;
+    background: #9aca3c;
+}
+
+.p-r-20 {
+    padding-left: 5%;
+}
+
+.action-sheet-mask {
+    background-color: rgba(0,0,0,.5);
+}
+
+.action-sheet-title {
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #9aca3c;
+}
+
+.action-sheet-button {
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 10px;
+    color: #fff;
+    background-color: #9aca3c;
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-transform: uppercase;
+}
+
+.action-sheet-button i{
+    width: 15%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.action-sheet-button i img{
+    width: 25px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.action-sheet-icon {
+    display: inline;
+}
+
+.action-sheet-button:first-child, .action-sheet-title:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.action-sheet-button:nth-last-of-type(2) {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.action-sheet-button:last-of-type {
+    font-family: 'GothConBold';
+    border-radius: 12px;
+    margin: 8px 0 0;
+    background-color: transparent;
+    background-image: none;
+    font-weight: normal;
+    position: fixed;
+    bottom: 0;
+    text-transform: capitalize;
+}
+
+.bgImgOver .page__background {
+    background-image: url('../images/loadingSlide.jpg');
+    background-size: cover;
+}
+
+.card, .card--material {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.card__content {
+    font-size: 18px;
+}
+
+.iconImg-but {
+    width: 100%;
+    max-width: 45px;
+    vertical-align: text-top;
+}
+
+.iconText-but {
+    line-height: 65px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.iconMultiText-But {
+    font-weight: normal;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.freebiesList {
+    border: 1px solid #008CB7;
+    margin: 5px;
+    width: 98%;
+    border-radius: 5px;
+    color: #008CB7;
+}
+
+.partnersFound {
+    position: relative;
+    overflow: scroll;
+    height: 500px;
+}

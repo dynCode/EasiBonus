@@ -1,0 +1,34 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Virtual Card</div>
+        <div class="right">
+        </div>
+    </ons-toolbar>
+    <ons-row align="center">
+        <ons-col width="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col width="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>VIRTUAL CARD</span></h2>
+    <div style="padding: 0 20px">
+        <p>With your Virtual Card you’ll never leave home without missing a deal! </p>
+    </div>
+    <div style="text-align: center; width: 100%;">
+        <img ng-src='{{virtualCard}}' style="margin: auto; width: 100%;" />
+    </div>
+    <!--<div ons-if-orientation="portrait" style="text-align: center; width: 100%;">
+        <img src='https://www.mahala.mobi/api/class/test_1D.php?text={{CardNumber}}&rotate=270&comid={{comId}}' style="margin: auto; width: 100%;" />
+    </div>
+    <div ons-if-orientation="landscape" style="text-align: center; width: 100%;">
+        <img src='https://www.mahala.mobi/api/class/test_1D.php?text={{CardNumber}}&rotate=0&comid={{comId}}' style="margin: auto; width: 100%;" />
+    </div>-->
+    <ons-bottom-toolbar ng-style="{'background-color':footerBG}">
+        <ons-row vertical-align="center" style="height: 44px">
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 25px;" onclick="myNavigator.pushPage('views/home.html', { animation : 'slide' } )"><ons-icon icon="ion-home"></ons-icon></ons-col>
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 25px;" onclick="myNavigator.pushPage('views/socialmedia.html', { animation : 'slide' } )"><ons-icon icon="ion-heart"></ons-icon></ons-col>
+            <ons-col vertical-align="center" style="text-align: center; line-height: 44px; font-size: 15px;" ng-click="loadpage(5)">T&C’s</ons-col>
+        </ons-row>
+    </ons-bottom-toolbar>
+</ons-page>

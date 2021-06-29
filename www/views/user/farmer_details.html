@@ -1,0 +1,113 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <ons-row style="border: 1px solid #333; padding: 10px;">
+                    <ons-col width="50px">
+                        <img src="images/MyFarmersIconGrey.svg" alt="user" />
+                    </ons-col>
+                    <ons-col style="padding-left: 10px">
+                        {{farmerInfo.FirstName}} {{farmerInfo.LastName}}
+                        <br>
+                        - {{farmerInfo.memNum}}
+                    </ons-col>
+                </ons-row>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="editFarmer(farmerInfo.memNum);">
+                            <ons-row>
+                                <ons-col width="50px">
+                                    <img src="images/EditProfileIcon.svg" alt="user" />
+                                </ons-col>
+                                <ons-col style="padding-left: 10px; text-align: left;">
+                                    Edit<br>farmer info
+                                </ons-col>
+                            </ons-row>
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%" onclick="myNavigator.pushPage('views/user/new_farm_trans.html', { animation : 'lift' } )">
+                        <ons-button modifier="outline" id="btnLogIn" >
+                            <ons-row>
+                                <ons-col width="50px">
+                                    <img src="images/NewTransactionIcon.svg" alt="user" />
+                                </ons-col>
+                                <ons-col style="padding-left: 10px; text-align: left;">
+                                    New<br>transaction
+                                </ons-col>
+                            </ons-row>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;"> Farmer's Info</div>
+                <br>
+                <strong>Date Registered:</strong> {{farmerInfo.enrolDate}}<br>
+                <strong>Membership no:</strong> {{farmerInfo.memNum}}<br>
+                <strong>Last name:</strong> {{farmerInfo.LastName}}<br>
+                <strong>First Name:</strong> {{farmerInfo.FirstName}}<br>
+                <strong>Gender:</strong> {{farmerInfo.gender}}<br>
+                <strong>Date of Birth:</strong> {{farmerInfo.dob}}<br>
+                <strong>Mobile Number:</strong> {{farmerInfo.ContactNumber}}<br>
+                <strong>Mobile Number SMSable:</strong> {{farmerInfo.sendsms}}<br/>
+                <strong>Email Address:</strong> {{farmerInfo.EmailAddress}}<br>
+                <strong>Email mailable:</strong>{{farmerInfo.sendemail}}<br/>
+                <strong>ID / Passport:</strong> {{farmerInfo.IdNumber}}<br>
+                <strong>Location:</strong> {{farmerInfo.Suburb}}, {{farmerInfo.City}}, {{farmerInfo.District}}, {{farmerInfo.Province}}, {{farmerInfo.Country}}<br>
+                <strong>GPS Coordinates:</strong> {{farmerInfo.Addressline1}}<br>
+                <strong>Farm Size (in Hectar):</strong> {{farmerInfo.fieldValue}}<br>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;"> Farmer's Transactions</div>
+                <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee;">
+                    <ons-col width="1%"></ons-col>
+                    <ons-col width="20%"><strong>Date</strong></ons-col>
+                    <ons-col width="1%"></ons-col>
+                    <ons-col><strong>Delivery Nr.</strong></ons-col>
+                    <ons-col width="1%"></ons-col>
+                    <ons-col><strong>Product</strong></ons-col>
+                    <ons-col width="1%"></ons-col>
+                    <ons-col style="text-align: right;"><strong>Quantity</strong></ons-col>
+                </ons-row>
+                <div ng-if="framerTransList.length > 0">
+                    <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee;" ng-repeat="(index, trans) in framerTransList" ng-click="editTrans(index);">
+                        <ons-col width="1%"></ons-col>
+                        <ons-col width="20%">{{trans.transactionDate}}</ons-col>
+                        <ons-col width="1%"></ons-col>
+                        <ons-col>{{trans.invoiceNumber}}</ons-col>
+                        <ons-col width="1%"></ons-col>
+                        <ons-col>{{trans.label}}</ons-col>
+                        <ons-col width="1%"></ons-col>
+                        <ons-col style="text-align: right;">{{trans.quantity}}</ons-col>
+                    </ons-row>
+                </div>
+                <div ng-if="framerTransList.length == 0">
+                    <span>Loading...</span>
+                </div>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                            Home
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="myFarmers()">
+                            My Farmers
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

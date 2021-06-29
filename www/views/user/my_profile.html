@@ -1,0 +1,56 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-card>
+        <div class="content">
+            <ons-row style="border: 1px solid #333; padding: 10px;">
+                <ons-col width="50px">
+                    <img src="images/AgentProfileIconGrey.svg" alt="user" />
+                </ons-col>
+                <ons-col style="padding-left: 10px">
+                    {{FirstName}} {{LastName}}
+                    <br>
+                    {{totalFramers}} farmers linked
+                </ons-col>
+            </ons-row>
+            <br>
+            <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">My Profile</div>
+            <p>
+                <strong>Date Registered:</strong> {{enrolDate}}<br>
+                <strong>Membership no:</strong> {{userMpacc}}<br>
+                <strong>Last name:</strong> {{LastName}}<br>
+                <strong>First Name:</strong> {{FirstName}}<br>
+                <strong>Mobile Number:</strong> {{ContactNumber}}<br>
+                <strong>Email Address:</strong> {{EmailAddress}}<br>
+                <strong>ID / Passport:</strong> {{IdNumber}}<br>
+                <strong>Location:</strong> {{Suburb}}, {{City}}, {{District}}, {{Province}}, {{Country}}<br>
+                <strong>GPS Coordinates:</strong> {{Addressline1}}<br>
+            </p>
+            <br>
+            <ons-row>
+                <ons-col style="padding-right: 10px;" width="50%">
+                    <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                        Home
+                    </ons-button>
+                </ons-col>
+                <ons-col style="padding-left: 10px;" width="50%">
+                    <ons-button modifier="outline" id="btnLogIn" ng-click="SetupUpdate()">
+                        Edit
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+        </div>
+    </ons-card>
+    <ons-bottom-toolbar style="background-color: #fff; height: auto;">
+        <img src="images/FooterImg.svg" alt="logo" style="width: 100%;" />
+    </ons-bottom-toolbar>
+</ons-page>

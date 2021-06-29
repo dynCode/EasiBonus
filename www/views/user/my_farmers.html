@@ -1,0 +1,36 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <div class="subImgBlock">
+                    <img src="images/MyFarmersIconGrey.svg" alt="logo" style="height: 40px;" /> <span style="font-size: 22px; line-height: 40px; vertical-align: top;">My farmers</span>
+                </div>
+                <p style="margin-top: 10px">
+                    <ons-search-input placeholder="Search" style="width: 100%;" ng-model="searchText"></ons-search-input>
+                </p>
+                <ons-list>
+                    <ons-list-item tappable ng-repeat="farmer in farmers | filter:searchText | orderBy:'firstname'" ng-click="viewFarmer(farmer.membershipNumber);">{{farmer.firstname}} {{farmer.lastname}} - {{farmer.membershipNumber}}</ons-list-item>
+                </ons-list>
+                <br><br>
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                            Home
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

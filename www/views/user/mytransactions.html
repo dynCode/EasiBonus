@@ -1,0 +1,56 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">My Transactions</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-card>
+        <div class="title">
+            MY 10 LAST TRANSACTIONS
+        </div>
+        <div class="content">
+            <hr style="color: rgba(200,33,38,1)" />
+            <h3>POINTS:</h3>
+            <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee; font-size: 11px;">
+                <ons-col width="1%"></ons-col>
+                <ons-col width="16%"><strong>Date</strong></ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col><strong>Description</strong></ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col width="12%"><strong>Points</strong></ons-col>
+            </ons-row>
+            <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee; font-size: 11px;" ng-repeat="trans in transList">
+                <ons-col width="1%"></ons-col>
+                <ons-col width="16%">{{trans.transactionDate}}</ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col>{{trans.label}}</ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col width="12%">{{trans.transactionPoints}}</ons-col>
+            </ons-row>
+            <hr style="color: rgba(200,33,38,1)" />
+            <h3>DISCOUNTS:</h3>
+            <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee; font-size: 11px;">
+                <ons-col width="1%"></ons-col>
+                <ons-col width="16%"><strong>Date</strong></ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col><strong>Description</strong></ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col width="12%"><strong>Discount</strong></ons-col>
+            </ons-row>
+            <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee; font-size: 11px;" ng-repeat="disc in discountList">
+                <ons-col width="1%"></ons-col>
+                <ons-col width="16%">{{disc.transactionDate}}</ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col>{{disc.label}}</ons-col>
+                <ons-col width="1%"></ons-col>
+                <ons-col width="12%">{{disc.transactionPoints}}</ons-col>
+            </ons-row>
+        </div>
+    </ons-card>
+</ons-page>

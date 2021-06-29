@@ -1,0 +1,105 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-card>
+        <div class="content">
+            <ons-row style="border: 1px solid #333; padding: 10px;">
+                <ons-col width="50px">
+                    <img src="images/AgentProfileIconGrey.svg" alt="user" />
+                </ons-col>
+                <ons-col style="padding-left: 10px">
+                    {{FirstName}} {{LastName}}
+                    <br>
+                    {{totalFramers}} farmers linked
+                </ons-col>
+            </ons-row>
+            <br>
+            <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Help Center</div>
+            <br>
+            <div style="border: 1px solid #333; padding: 10px; text-align: center;">
+                FAQ
+            </div>
+            <p>
+                    <strong>How do I register for the Easi Bonus application?</strong><br>
+                    Please contact your Easi Seeds distributor who will provide you with an agent registration form. Ensure to fill in all fields and choose a username and password. Send it back to your Easi Seeds distributor. <br>
+                    <br>
+                    Once successfully registered for the application, you will receive a confirmation email that will be accompanied by a link to the application on the Google Play and iStore. Use these links to download the applications for the specific device that you use; Android or Apple. The email will also provide you with your username and password that you can use to login.  
+            </p>
+            <p>
+                    <strong>I can’t remember my username</strong><br>
+                    If you cannot remember your membership number, which is your username by default, please use your mobile number or your email address instead. 
+            </p>
+            <p>
+                    <strong>I can’t remember my password</strong><br>
+                    On the login screen, there is a ‘I forgot my password’ option. When you click on this, you will be navigated to a new screen. Please insert your username into the field provided and click on continue. You will navigate to a window that requests your username, a temporary password, a new password and your new password re-entered again. Please enter your username in the username field. You will receive a temporary password in your registered email inbox, this temporary password should be used for the temporary password field. Now, in the two remaining fields, enter the password of your choice. You have to re-enter it again in the second field to ensure that you typed it correctly in the first field. Please follow the password rules at the top of the 4 fields carefully when choosing your new password otherwise you will not be able to reset same. Now click on ‘reset my password’ to change and update your password.
+            </p>
+            <p>
+                    <strong>How to edit your profile</strong><br>
+                    Please click on the main menu button (☰) and choose the ‘my profile’ option. You will be navigated to your profile that lists the current information about you stored on the system. Click on the ‘edit’ button and you will be able to edit the information stored on the system. Once you click on ‘confirm’ you will be led to a confirmation screen. Please ensure to click on the ‘update’ button in order to successfully make the changes to your profile. 
+            </p>
+            <p>
+                    <strong>How to register a new farmer</strong><br>
+                    Once logged into your profile you will be able to choose between two options: ‘My farmers’ or ‘Register new farmer’. Please click on the ‘Register new farmer’ option. You will be navigated to a ‘register farmer’ screen. Complete all required fields (last name and mobile number) and enter any additional information you have of the client. Click on the ‘confirm’ button. On the ‘register farmer confirmation’ screen, remember to click on the 'register' button for the registration to be successful.
+            </p>
+            <p>
+                    <strong>How to find an existing farmer</strong><br>
+                    Once logged into your profile you will be able to choose between two options: ‘My farmers’ or ‘Register new farmer’. Please click on the ‘My farmers’ option. You will be navigated to a list of all the registered farmers under your profile. Your farmers will be listed in alphabetical order according to their surnames. <br>
+            <br>
+                    You can use the search bar to search for the farmer using the farmer’s last name, first name or membership number. In addition, you can use the navigation bar on the right side of the list to navigate through the list of your farmers.  
+            </p>
+            <p>
+                    <strong>How to update a farmer’s profile</strong><br>
+                    To update a farmer’s profile, you must first navigate to the profile in question. Once the farmer’s profile is open, click on the ‘Edit farmer info’ button at the top. You will be navigated to the ‘edit farmer info’ screen. Update, or add information to, all fields and click the ‘confirm’ button. On the farmer info confirmation screen, click on the ‘update’ button to successfully update the farmer’s profile. 
+            </p>
+            <p>
+                    <strong>How to load a new transaction</strong><br>
+                    To load a new transaction, you first need to navigate to the existing farmer’s profile who is making the purchase or accepting the donation. If the farmer does not exist on your client list yet, please register the farmer to enable you to load a new transaction. <br>
+                    <br>
+                    Once the farmer’s profile is open, click on the ‘new transaction’ button at the top of the farmer’s profile. Please enter all fields provided. If this transaction is a donation, please enter a value of zero in the ‘Total Value’ field. Click on the ‘confirm’ button and on the next screen (transaction confirmation screen), the submit button to successfully load the transaction onto the farmer’s profile.  
+            </p>
+            <p>
+                    <strong>How to view existing transaction</strong><br>
+                    To view an existing transaction, you must first navigate to the farmer’s profile. On the farmer’s profile, below the list of recent transaction, click on the ‘view more transaction’ button. You will be navigated to a list of previous transactions that took place under the farmer’s profile. The list will be sorted according to purchase date. <br>
+                    <br>
+                    You can search for the existing transaction with the search bar by using the purchase date, product code or product name. In addition, you can search for the existing transaction using the navigation bar on the right of the transaction list. Once you have found the correct transaction, you can click on it and you will be able to view the transaction that will show you all the information pertaining to the transaction. 
+            </p>
+            <p>
+                    <strong>How to re-order an existing transaction</strong><br>
+                    To re-order an existing transaction, you must first navigate to the existing transaction. On the farmer’s profile, below the list of recent transaction, click on the ‘view more transaction’ button. You will be navigated to a list of previous transactions that took place under the farmer’s profile. The list will be sorted according to purchase date. You can search for the existing transaction with the search bar by using the purchase date, product code or product name. In addition, you can search for the existing transaction using the navigation bar on the right of the transaction list. Once you have found the correct transaction, you can click on it and you will be able to view the transaction that will show you all the information pertaining to the transaction.<br>
+                    <br>
+                    Click on the ‘re-order’ button at the bottom of the ‘transaction info’ screen. You will be navigated to the re-order screen where you will be able to edit any details of the transaction. Click on the confirm button and, once on the ‘transaction confirmation’ screen, the ‘submit’ button to complete the transaction. 
+            </p>
+            <p>
+                    <strong>CONTACT US</strong><br>
+                    Email: Info@agribonus.co.za<br>
+                    Landline: +27 12 843 5660<br>
+                    WhatsApp: +27 72 931 9734
+            </p>
+            <br>
+            <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                            Home
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/contactUs.html', { animation : 'lift' } )">
+                            Contact Us
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+        </div>
+    </ons-card>
+    <ons-bottom-toolbar style="background-color: #fff; height: auto;">
+        <img src="images/FooterImg.svg" alt="logo" style="width: 100%;" />
+    </ons-bottom-toolbar>
+</ons-page>

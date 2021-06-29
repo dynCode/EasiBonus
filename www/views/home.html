@@ -1,0 +1,60 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            
+        </div>
+        <div class="center">Welcome</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div style="position: relative;top: 10%;width: 80%;text-align: center;margin: auto;">
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <div class="subImgBlock">
+                    <img src="images/Logo.svg" alt="logo" style="width: 50%;" />
+                </div>
+                <p>&nbsp;</p>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Home</div>
+                <br>
+                <ons-row>
+                    <ons-col width="50px">
+                        <img src="images/AgentProfileIconGrey.svg" alt="user" />
+                    </ons-col>
+                    <ons-col style="padding-left: 10px">
+                        Welcome {{FirstName}} {{LastName}}
+                        <br>
+                        {{totalFramers}} farmers linked
+                    </ons-col>
+                </ons-row>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="myFarmers()">
+                            <img src="images/MyFarmersIconGreen.svg" alt="user" />
+                            <br>
+                            My<br>Farmers
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="startRegisterFarmer()">
+                            <img src="images/RegisterFarmersIconGreen.svg" alt="user" />
+                            <br>
+                            Register<br>new farmer
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <p>
+                    <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/user/bulk_trans.html', { animation : 'slide' } )">
+                        BULK TRANSACTION
+                    </ons-button>
+                </p>
+            </div>
+        </ons-card>
+    </div>
+    <ons-bottom-toolbar style="background-color: #fff; height: auto;">
+        <img src="images/FooterImg.svg" alt="logo" style="width: 100%;" />
+    </ons-bottom-toolbar>
+</ons-page>

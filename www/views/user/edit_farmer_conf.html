@@ -1,0 +1,59 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <div class="subImgBlock">
+                    <img src="images/RegisterIconGrey.svg" alt="logo" style="width: 25%;" />
+                </div>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Farmer Info Confirmation</div>
+                <br>
+                <strong>Last Name:*</strong> {{data.fsurname}}<br/>
+                <strong>First Name:</strong> {{data.fname}}<br/>
+                <strong>Gender:*</strong> {{data.fgender}}<br>
+                <strong>Date of Birth:*</strong> {{data.fdob}}<br>
+                <strong>Mobile Number:*</strong> {{data.fcell}}<br/>
+                <strong>Mobile Number SMSable:</strong> {{data.fsendsms}}<br/>
+                <strong>Email Address:</strong> {{data.fmail}}<br/>
+                <strong>Email mailable:</strong> {{data.fsendemail}}<br>
+                <strong>ID/Passport Number:</strong> {{data.fid}}<br/>
+                <strong>Country:*</strong> {{data.fcount.country}}<br/>
+                <strong>Province:*</strong> {{data.fprov.label}}<br/>
+                <strong>District:*</strong> {{data.fdist.label}}<br/>
+                <strong>City/Town/Sector/Ward:*</strong> {{data.fciry.label}}<br/>
+                <strong>Place/Village:*</strong> {{data.fplace.label}}<br/>
+                <span ng-if="data.fplace.value === 'other'"><strong>Place/Village:</strong> {{data.otherplace}}<br/></span>
+                <strong>GPS Coordinates:</strong>{{data.fcoords}}<br>
+                <strong>Farm Size (in Hectar):</strong> {{data.ffieldValue}}<br>
+                <p>
+                    <ons-button modifier="outline" id="btnLogIn" ng-click="updateFarmer();">
+                        Update Farmer's Info
+                    </ons-button>
+                </p>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/user/farmer_edit.html', { animation : 'lift' } )">
+                            Edit Farmer's Info
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="viewFarmer(farmerInfo.memNum);">
+                            Back To Farmer's Info
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

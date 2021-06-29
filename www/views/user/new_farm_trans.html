@@ -1,0 +1,73 @@
+<ons-page ng-init="buildProdCats();">
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <ons-row style="border: 1px solid #333; padding: 10px;">
+                    <ons-col width="50px">
+                        <img src="images/MyFarmersIconGrey.svg" alt="user" />
+                    </ons-col>
+                    <ons-col style="padding-left: 10px">
+                        {{farmerInfo.FirstName}} {{farmerInfo.LastName}}
+                        <br>
+                        - {{farmerInfo.memNum}}
+                    </ons-col>
+                </ons-row>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">New Transaction</div>
+                <br>
+                Product Barcode:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.barcode" type="text" id="barcodeScanned" class="text-input" ng-blur="productLookup()"/>
+                </div>
+                Product Category:
+                <div class="form-row formListInputLrg">
+                    <select ng-model="data.pcat" ng-options="option.label for option in data.ProdCats track by option.value"  ng-change="setProducts()"></select>
+                </div>
+                Product Description:
+                <div class="form-row formListInputLrg">
+                    <select ng-model="data.prod" ng-options="option.productName for option in data.Prods track by option.productCode"  ng-change="data.barcode = data.prod.productCode"></select>
+                </div>
+                Date of Purchase:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.dop" type="date" class="text-input" ng-value="data.dop" />
+                </div>
+                Delivery note number:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.dnn" type="text" class="text-input" pattern="[A-z0-9]+" maxlength="20" onkeyup="this.value=this.value.replace(/[^0-9a-z]/gi, '')" />
+                </div>
+                Quantity (Items/Bags/Units):
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.qty" type="number" min="1" class="text-input" />
+                </div>
+                Total Value of Item/s:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.tval" type="number" min="0.00" step="0.01" class="text-input" ng-value="0.00" />
+                </div>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="viewFarmer(farmerInfo.memNum);">
+                            Back To Farmer's Info
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="checkTransFields();">
+                            Confirm Transaction
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

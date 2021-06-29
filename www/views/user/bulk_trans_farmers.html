@@ -1,0 +1,45 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <div class="subImgBlock">
+                    <img src="images/MyFarmersIconGrey.svg" alt="logo" style="height: 40px;" /> <span style="font-size: 22px; line-height: 40px; vertical-align: top;">My farmers</span>
+                </div>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">New Bulk Transaction</div>
+                <br>
+                <p style="margin-top: 10px">
+                    <ons-search-input placeholder="Search" style="width: 100%;" ng-model="searchText"></ons-search-input>
+                </p>
+                <ons-list>
+                    <ons-list-item tappable ng-repeat="farmer in farmers | filter:searchText | orderBy:'firstname'"><div class="left"><ons-checkbox input-id="check-{{farmer.membershipNumber}}"  ng-model="data.farmer_id[farmer.membershipNumber]" value="{{farmer.membershipNumber}}" name="member"></ons-checkbox></div><div class="center">{{farmer.firstname}} {{farmer.lastname}} - {{farmer.membershipNumber}}</div></ons-list-item>
+                </ons-list>
+                <br>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                            Cancel
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="processBulkTrans()">
+                            Ok
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

@@ -1,0 +1,130 @@
+<ons-page ng-init="">
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <img src="images/Logo.svg" alt="logo" style="height: 39px; padding-top: 5px; padding-left: 10px;" />
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+        <ons-card ng-if="loggedIn">
+            <div class="content">
+                <div class="subImgBlock">
+                    <img src="images/RegisterIconGrey.svg" alt="logo" style="width: 25%;" />
+                </div>
+                <br>
+                <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Register Farmer</div>
+                <br>
+                Last Name:*
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.fsurname" type="text" class="text-input" placeholder="Surname" />
+                </div>
+                First Name:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.fname" type="text" class="text-input" placeholder="Name" />
+                </div>
+                Gender:*
+                <div class="form-row formListInputLrg">
+                    <select name="farmerCount" ng-model="data.fgender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                Date of Birth:*
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.fdob" type="date" class="text-input" />
+                </div>
+                Mobile Number:*
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.dialcode" type="text" class="text-input" disabled style="width:20%; color:#000;" ng-value="DailCode" /><input ng-model="data.fcell" type="text" class="text-input" placeholder="Mobile" style="width:80%" pattern="[0-9]+" maxlength="20" onkeyup="this.value=this.value.replace(/[^0-9]/gi, '')" />
+                </div>
+                <ons-row style="padding: 5px 0;">
+                    <ons-col>
+                        <label for="check-1" class="center">
+                            Mobile Number SMSable
+                        </label>
+                    </ons-col>
+                    <ons-col>
+                        <label class="left">
+                            <ons-checkbox input-id="check-1" ng-model="data.fsendsms" value="yes"></ons-checkbox>
+                        </label>
+                    </ons-col>
+                </ons-row>
+                Email Address:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.fmail" type="text" class="text-input" placeholder="Email" />
+                </div>
+                <ons-row style="padding: 5px 0;">
+                    <ons-col>
+                        <label for="check-3" class="center">
+                            Email mailable
+                        </label>
+                    </ons-col>
+                    <ons-col>
+                        <label class="left">
+                            <ons-checkbox input-id="check-3" ng-model="data.fsendemail" value="yes"></ons-checkbox>
+                        </label>
+                    </ons-col>
+                </ons-row>
+                ID/Passport Number:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.fid" type="text" class="text-input" placeholder="Id/Passport" />
+                </div>
+                Country:*
+                <div class="form-row formListInputLrg">
+                    <select name="farmerCount" ng-options="option.country for option in data.CountryList track by option.code" ng-model="data.fcount" ng-change="setProvinces(data.fcount)" disabled>
+                    </select>
+                </div>
+                Province:*
+                <div class="form-row formListInputLrg">
+                    <select name="farmerProv" ng-options="option.label for option in data.ProvinceList track by option.value" ng-model="data.fprov" ng-change="setDistricts()">
+                    </select>
+                </div>
+                District:*
+                <div class="form-row formListInputLrg">
+                    <select name="farmerDis" ng-options="option.label for option in data.disList track by option.value" ng-model="data.fdist" ng-change="setCities()">
+                    </select>
+                </div>
+                City/Town/Sector/Ward:*
+                <div class="form-row formListInputLrg">
+                    <select name="farmerCity" ng-options="option.label for option in data.CityList track by option.value" ng-model="data.fciry" ng-change="setPlaces()">
+                    </select>
+                </div>
+                Place/Village:*
+                <div class="form-row formListInputLrg">
+                    <select name="farmerCity" ng-options="option.label for option in data.PlacesList track by option.value" ng-model="data.fplace">
+                    </select>
+                </div>
+                <div class="form-row formListInputLrg" ng-if="data.fplace.value === 'other'">
+                    <input ng-model="data.otherplace" type="text" class="text-input" placeholder="Place/Village Name" />
+                </div>
+                GPS Coordinates:
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.fcoords" type="text" class="text-input" placeholder="Coords" style="width:90%" /><ons-button onclick="myNavigator.pushPage('views/user/drop_pin.html', { animation : 'lift' } )" style="width:10%;"><ons-icon icon="fa-map-marker"></ons-icon></ons-button>
+                </div>
+                Farm Size (in Hectar):
+                <div class="form-row formListInputLrg">
+                    <input ng-model="data.ffieldValue" type="number" min="0.00" step="0.01" class="text-input" placeholder="Farm Size (in Hectar)" />
+                </div>
+                <br>
+                <ons-row>
+                    <ons-col style="padding-right: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" onclick="myNavigator.pushPage('views/home.html', { animation : 'lift' } )">
+                            Home
+                        </ons-button>
+                    </ons-col>
+                    <ons-col style="padding-left: 10px;" width="50%">
+                        <ons-button modifier="outline" id="btnLogIn" ng-click="toFarmerConfirm();">
+                            Confirm
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+        </ons-card>
+    </div>
+</ons-page>

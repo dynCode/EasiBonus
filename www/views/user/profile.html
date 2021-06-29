@@ -1,0 +1,51 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Profile</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-card>
+        <div class="content">
+            <ons-button modifier="outline" style="border-color: #ff9d00" onclick="myNavigator.pushPage('views/user/my_profile.html', { animation : 'slide' } )">
+                <ons-row>
+                    <ons-col width="10%"><img src="images/svg/profile/Profile.svg" style="width: 100%" /></ons-col>
+                    <ons-col style="line-height: 52px; text-align: left; padding-left: 20px;">Personal Details</ons-col>
+                </ons-row>
+            </ons-button>
+            <br><br>
+            <ons-button modifier="outline" style="border-color: #08b5d1" onclick="myNavigator.pushPage('views/user/add_child.html', { animation : 'slide' } )">
+                <ons-row>
+                    <ons-col width="10%"><img src="images/svg/profile/AddChild.svg" style="width: 100%;" /></ons-col>
+                    <ons-col style="line-height: 52px; text-align: left; padding-left: 20px;">Add a Child</ons-col>
+                </ons-row>
+            </ons-button>
+            <br><br>
+            <ons-button modifier="outline" style="border-color: #8e0451" onclick="myNavigator.pushPage('views/user/balance.html', { animation : 'slide' } )">
+                <ons-row>
+                    <ons-col width="10%"><img src="images/svg/profile/Balance.svg" style="width: 100%" /></ons-col>
+                    <ons-col style="line-height: 52px; text-align: left; padding-left: 20px;">Balance</ons-col>
+                </ons-row>
+            </ons-button>
+            <br><br>
+            <ons-button modifier="outline" style="border-color: #e41201" onclick="myNavigator.pushPage('views/user/loyalty_cards.html', { animation : 'slide' } )">
+                <ons-row>
+                    <ons-col width="10%"><img src="images/svg/profile/Cards.svg" style="width: 100%"  /></ons-col>
+                    <ons-col style="line-height: 52px; text-align: left; padding-left: 20px;">Loyalty Cards</ons-col>
+                </ons-row>
+            </ons-button>
+            <br><br>
+            <!--<ons-button modifier="outline" style="border-color: #67bd50" ng-click="logout()">
+                <ons-row>
+                    <ons-col width="10%"><img src="images/svg/Logout.svg" style="width: 100%" /></ons-col>
+                    <ons-col style="line-height: 52px; text-align: left; padding-left: 20px;">Logout</ons-col>
+                </ons-row>
+            </ons-button>-->
+        </div>
+    </ons-card>
+</ons-page>

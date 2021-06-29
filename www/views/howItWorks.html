@@ -1,0 +1,17 @@
+<ons-page class="bgImgOver">
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Tutorial</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="showActionMenu()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-row align="center">
+        <!--<ons-col width="100%"><ons-button modifier="light large" onclick="myNavigator.pushPage('views/tutorial_vids.html', { animation : 'slide' } )"><img src="images/icons/TUTORIAL---VID.png" style="width: 175px;" /><br>Video Tutorial</ons-button></ons-col>-->
+        <ons-col width="100%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/tutorial.html', { animation : 'slide' } )"><img src="images/icons/TUTORIAL---CARTOON.png" style="width: 175px;" /><br>Cartoon Tutorial</ons-button></ons-col>
+    </ons-row>
+</ons-page>
