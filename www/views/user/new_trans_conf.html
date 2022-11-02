@@ -27,6 +27,7 @@
                 <div class="myHeader" style="border-top: 1px solid #333; border-bottom: 1px solid #333;">Transaction Confirmation</div>
                 <br>
                 <strong>Product Barcode:</strong><br>{{data.barcode}}<br>
+				<span ng-if="data.qrcode"> <strong>Product qrcode:</strong><br>{{data.qrcode}}<br></span>
                 <strong>Product Category:</strong><br>{{data.pcat.label}}<br>
                 <strong>Product Description:</strong><br>{{data.prod.productName}}<br>
                 <strong>Date of Purchase:</strong><br>{{data.dop}}<br>

@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:cdv="http://cordova.apache.org/ns/1.0"
         id        = "com.easibonus"
-        versionCode = "10231" 
-        version   = "1.0.231">
+        versionCode = "10240" 
+        version   = "1.0.240">
     <name>EASI Bonus</name>
     <description>
         The Easi Bonus APP tracks the sale or donation of Easi Seed’s products to African farmers.

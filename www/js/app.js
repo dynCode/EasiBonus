@@ -22,7 +22,7 @@ module.filter('to_trusted', ['$sce', function($sce){
 
 module.controller('AppController', function($scope, $http, $window, $timeout, $filter, Upload, NgMap) {
     $scope.apiPath = 'https://agribonus.co.za/easiBonus/api/';
-    //$scope.apiPath = 'https://agribonus.co.za/easiDev/api/';
+    //$scope.apiPath = 'https://127.0.0.1/sportapp/';
     $scope.data = [];
     
     // quick search partner list
@@ -1394,8 +1394,13 @@ module.controller('AppController', function($scope, $http, $window, $timeout, $f
         });
     };
     
+	$scope.$watch('data.barcode', function() {
+		
+    });
+	
     $scope.checkTransFields = function(type) {
         var barcode = $scope.data.barcode;
+		var qrcode = $scope.data.qrcode;
         var pcat = $scope.data.pcat;
         var prod = $scope.data.prod;
         var dop = $scope.data.dop;
@@ -1445,6 +1450,7 @@ module.controller('AppController', function($scope, $http, $window, $timeout, $f
     });
     $scope.newFarmTrans = function (memnum) {
         var barcode = $scope.data.barcode;
+		var qrcode = $scope.data.qrcode;
         var pcat = $scope.data.pcat.value;
         var prod = $scope.data.prod.productName;
         var pId = $scope.data.prod.partnerId;
@@ -1455,7 +1461,7 @@ module.controller('AppController', function($scope, $http, $window, $timeout, $f
         var fmpacc = memnum;
         
         $scope.data.errorCode = 'Processing, please wait...';
-        $http.post($scope.apiPath+'transactions.php', {"reqType" : "newTrans", "barcode" : barcode, "pcat" : pcat, "prod" : prod, "dop" : dop, "dnn" : dnn, "qty" : qty, "tval" : tval, "pId" : pId, "amemnum" : $scope.userMpacc, "fmpacc" : fmpacc})
+        $http.post($scope.apiPath+'transactions.php', {"reqType" : "newTrans", "barcode" : barcode, "qrcode" : qrcode, "pcat" : pcat, "prod" : prod, "dop" : dop, "dnn" : dnn, "qty" : qty, "tval" : tval, "pId" : pId, "amemnum" : $scope.userMpacc, "fmpacc" : fmpacc})
         .success(function(data){
             modal.hide();
             if (data['code'] == '200') {
@@ -1822,6 +1828,37 @@ module.controller('mapController', function ($scope, $timeout, NgMap) {
 });
 
 // normal JS
+
+scannedBC.addEventListener('buildBarCode', function (e) {
+  // e.target matches elem
+}, false);
+
+function onQRScanSuccess(decodedText, decodedResult) {
+    console.log(`Code scanned = ${decodedText}`, decodedResult);
+	
+	const qrRes = decodedText.split(';');
+	
+	var el = document.getElementById('barcodeScanned');
+	var qr = document.getElementById('qrcodeScanned');
+	
+	
+	el.value = qrRes[2];
+	
+	el.focus();
+	
+	el.dispatchEvent(new Event('change'));
+	
+	el.blur();
+	
+	qr.value = decodedText;
+	
+	qr.focus();
+	
+	qr.dispatchEvent(new Event('change'));
+	
+	qr.blur();
+}
+
 // check if obejct is empty 
 function isNotEmpty(myObject) {
     for(var key in myObject) {
