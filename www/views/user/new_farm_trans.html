@@ -29,15 +29,24 @@
                 Product Barcode:
                 <div class="form-row formListInputLrg">
                     <input ng-model="data.barcode" type="text" id="barcodeScanned" class="text-input" ng-blur="productLookup()"/>
-					<span style="visibility:hidden"><input ng-model="data.qrcode" type="text" id="qrcodeScanned" class="text-input" disabled /></span>
+                    <span style="visibility:hidden"><input ng-model="data.qrcode" type="text" id="qrcodeScanned" class="text-input" disabled /></span>
                 </div>
-				<div id="qr-reader" style="width: 100%; height: 400px;"></div>
-				<script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
-				<script>
-					var html5QrcodeScanner = new Html5QrcodeScanner(
-						"qr-reader", { fps: 10, qrbox: 250 });
-					html5QrcodeScanner.render(onQRScanSuccess)
-				</script>
+                <ons-button modifier="outline" id="startQRCode" onclick="startScanner()" style="margin-top: -35px;">
+                    Scan QR Code
+                </ons-button>
+                
+                <div id="reader" style="width: 100%; height: 400px; display: none;"></div>
+                <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+                <ons-button modifier="outline" id="stopQRCode" onclick="stopScanner()" style="display: none">
+                    Stop QR Scanner
+                </ons-button>
+                <script>
+                        /*
+                        var html5QrcodeScanner = new Html5QrcodeScanner(
+                                "qr-reader", { fps: 10, qrbox: 250 });
+                        html5QrcodeScanner.render(onQRScanSuccess)
+                        */
+                </script>
                 Product Category:
                 <div class="form-row formListInputLrg">
                     <select ng-model="data.pcat" ng-options="option.label for option in data.ProdCats track by option.value"  ng-change="setProducts()"></select>

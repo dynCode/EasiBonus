@@ -1833,30 +1833,58 @@ scannedBC.addEventListener('buildBarCode', function (e) {
   // e.target matches elem
 }, false);
 
+function startScanner() {
+    var readerBox = document.getElementById('reader');
+    var stopQRBox = document.getElementById('stopQRCode');
+    var startQRBox = document.getElementById('startQRCode');
+    readerBox.style.display = 'block';
+    stopQRBox.style.display = 'block';
+    startQRBox.style.display = 'none';
+    const html5QrCode = new Html5Qrcode("reader");
+    const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+        console.log(`Code scanned = ${decodedText}`, decodedResult);
+	
+        const qrRes = decodedText.split(';');
+
+        var el = document.getElementById('barcodeScanned');
+        var qr = document.getElementById('qrcodeScanned');
+
+        if (qrRes[2]) {
+            el.value = qrRes[2];
+        } else {
+            el.value = 'NO Barcode Found';
+        }
+        el.focus();
+        el.dispatchEvent(new Event('change'));
+        el.blur();
+        qr.value = decodedText;
+        qr.focus();
+        qr.dispatchEvent(new Event('change'));
+        qr.blur();
+    };
+                        
+    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+
+    // If you want to prefer front camera
+    html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+};
+
+function stopScanner() {
+    const html5QrCode = new Html5Qrcode("reader");
+    html5QrCode.stop().then((ignore) => {
+        var readerBox = document.getElementById('reader');
+        var stopQRBox = document.getElementById('stopQRCode');
+        var startQRBox = document.getElementById('startQRCode');
+        readerBox.style.display = 'none';
+        stopQRBox.style.display = 'none';
+        startQRBox.style.display = 'Block';
+    }).catch((err) => {
+        // Stop failed, handle it.
+    });
+}
+
 function onQRScanSuccess(decodedText, decodedResult) {
-    console.log(`Code scanned = ${decodedText}`, decodedResult);
-	
-	const qrRes = decodedText.split(';');
-	
-	var el = document.getElementById('barcodeScanned');
-	var qr = document.getElementById('qrcodeScanned');
-	
-	
-	el.value = qrRes[2];
-	
-	el.focus();
-	
-	el.dispatchEvent(new Event('change'));
-	
-	el.blur();
-	
-	qr.value = decodedText;
-	
-	qr.focus();
-	
-	qr.dispatchEvent(new Event('change'));
-	
-	qr.blur();
+    
 }
 
 // check if obejct is empty 

@@ -17,40 +17,41 @@
             <p>&nbsp;</p>
             <div class="myHeader">Login</div>
             <br><br>
-            <ons-row style="margin-bottom: 5px;">
-                <ons-col width="38px">
-                    <img src="images/UsernameIcon.svg" alt="user" />
-                </ons-col>
-                <ons-col>
-                    <div class="form-row formListInputLogin">
-                        <input ng-model="data.loyaltyNum" type="text" class="text-input" placeholder="Username" />
-                    </div>
-                </ons-col>
-            </ons-row>
-            <ons-row>
-                <ons-col width="38px">
-                    <img src="images/PasswordIcon.svg" alt="user" />
-                </ons-col>
-                <ons-col>
-                    <div class="form-row formListInputLogin">
-                        <input ng-model="data.password" type="password" class="text-input" placeholder="Password" />
-                    </div>
-                </ons-col>
-            </ons-row>
-            <br>
-            <div style="float: right">
-                <label for="remeber_me" class="center" style="color: #9aca3c">		
-                    Remember Me
-                </label>
-                <label class="left">
-                    <ons-checkbox name="remeber_me" input-id="remeber_me" ng-model="data.remeber" value="yes"></ons-checkbox>
-                </label>
-            </div>
-            <ons-row>
-                <ons-col align="center"><ons-button modifier="quiet" onclick="myNavigator.pushPage('views/resetpassword.html', { animation : 'slide' } )" >I forgot my password</ons-button></ons-col>
-            </ons-row>
-            <br><br>
-            <ons-button modifier="large" id="btnLogIn" ng-click="LogIn()" style="width:100%">LOG IN</ons-button>
+            
+                <ons-row style="margin-bottom: 5px;">
+                    <ons-col width="38px">
+                        <img src="images/UsernameIcon.svg" alt="user" />
+                    </ons-col>
+                    <ons-col>
+                        <div class="form-row formListInputLogin">
+                            <input ng-model="data.loyaltyNum" type="text" class="text-input" placeholder="Username" />
+                        </div>
+                    </ons-col>
+                </ons-row>
+                <ons-row>
+                    <ons-col width="38px">
+                        <img src="images/PasswordIcon.svg" alt="user" />
+                    </ons-col>
+                    <ons-col>
+                        <div class="form-row formListInputLogin">
+                            <input ng-model="data.password" type="password" class="text-input" placeholder="Password" ng-keyup="$event.keyCode == 13 && LogIn()" />
+                        </div>
+                    </ons-col>
+                </ons-row>
+                <br>
+                <div style="float: right">
+                    <label for="remeber_me" class="center" style="color: #9aca3c">		
+                        Remember Me
+                    </label>
+                    <label class="left">
+                        <ons-checkbox name="remeber_me" input-id="remeber_me" ng-model="data.remeber" value="yes"></ons-checkbox>
+                    </label>
+                </div>
+                <ons-row>
+                    <ons-col align="center"><ons-button modifier="quiet" onclick="myNavigator.pushPage('views/resetpassword.html', { animation : 'slide' } )" >I forgot my password</ons-button></ons-col>
+                </ons-row>
+                <br><br>
+                <ons-button modifier="large" id="btnLogIn" ng-click="LogIn()" style="width:100%">LOG IN</ons-button>
         </div>
     </ons-card>
     <ons-bottom-toolbar style="background-color: #fff; height: auto;">
